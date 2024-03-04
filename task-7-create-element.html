@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="margin: 0">
+    <div id="header" style="padding: 1rem 0; background-color: lightblue">
+      <h1 id="main-heading" style="margin: 0">Fruit Shop</h1>
+    </div>
+    <div>
+      <h2 id="basket-heading">Fruits In Basket</h2>
+      <ul class="fruits">
+        <li class="fruit">Banana</li>
+        <li class="fruit">Apple</li>
+        <li class="fruit">Orange</li>
+        <li class="fruit">Kiwi</li>
+      </ul>
+    </div>
+    <div id="thanks"></div>
+  </body>
+  <script>
+    const para=document.createElement('h3');
+    const para1=document.createElement('p');
+
+    const paratext=document.createTextNode('Buy high quality organic fruits online');
+    const paratext1=document.createTextNode('Total fruits: 4'); 
+
+    para.appendChild(paratext);
+    para1.appendChild(paratext1);
+
+    const divs=document.getElementsByTagName('div');
+    const seconddiv = divs[0];
+    seconddiv.appendChild(para);
+
+    
+    const newdiv=divs[1];
+    const fruit = document.querySelector(".fruits");
+    newdiv.insertBefore(para1,fruit);
+
+para1.className='fruits-total';
+para1.id='fruits-total';
+console.log(para1);
+para1.setAttribute('style','color:green')
+para.setAttribute('style','font-style:italic')
+     </script>
+</html>
