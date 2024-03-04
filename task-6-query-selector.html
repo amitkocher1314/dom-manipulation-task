@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body style="margin: 0">
+  <div id="header" style="padding: 1rem 0; background-color: lightblue">
+    <h1 id="main-heading" style="margin: 0">Fruit Shop</h1>
+  </div>
+  <div>
+    <h2 id="basket-heading">Fruits In Basket</h2>
+    <ul class="fruits">
+      <li class="fruit">Banana</li>
+      <li class="fruit">Apple</li>
+      <li class="fruit">Orange</li>
+      <li class="fruit">Kiwi</li>
+    </ul>
+  </div>
+  <div id="thanks"></div>
+</body>
+<script>
+    const mainheading=document.querySelector('#main-heading');
+mainheading.style.textAlign='right'
+const basketheading=document.querySelector('#basket-heading');
+basketheading.style.color='brown';
+const fruits=document.querySelector('.fruits');
+fruits.style.backgroundColor='grey';
+fruits.style.padding='30px';
+fruits.style.margin='30px';
+fruits.style.width='50%';
+fruits.style.borderRadius='5px';
+fruits.style.listStyleType='none';
+const basketheadings=document.querySelector('h2');
+basketheadings.style.margin='30px';
+const fruititems2=document.querySelectorAll('.fruit');
+for(let i=0;i<fruititems2.length;i++){
+  fruititems2[i].style.backgroundColor='white';
+  fruititems2[i].style.padding='10px';
+   fruititems2[i].style.margin='10px';
+   fruititems2[i].style.borderRadius='5px';
+   const odditems=document.querySelectorAll('.fruit:nth-child(odd)');
+for(let i=0;i<odditems.length;i++){
+  odditems[i].style.backgroundColor='lightgray'
+}
+const evenitems=document.querySelectorAll('.fruit:nth-child(even)');
+for(let i=0;i<evenitems.length;i++){
+  evenitems[i].style.backgroundColor='brown';
+  evenitems[i].style.color='white';
+  
+}
+}
+</script>
+
+</html>
