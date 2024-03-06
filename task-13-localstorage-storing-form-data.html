@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="margin: 0">
+    <form >
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username" />
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" />
+      <label for="phone">Phone No</label>
+      <input type="tel" name="phone" id="phone" />
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+  <script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit',function(event){
+        event.preventDefault();
+        const username  = document.getElementById('username').value;  //VALUE IS IMPORTANT POINT ELSE WE GET ELEMENT
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        
+        let User_Details={
+         name: username,
+         email: email,
+         phone: phone
+       }
+
+
+       //localStorage.setItem("user deatails",User_Details);
+       //console.log(localStorage)
+       //now output is this   -- Storage {user deatails: '[object Object]', length: 1} in console
+       //output in localatorage is --  KEY: user deatails	VALUE:[object Object]
+       //SO WE CONVERT TO STRING USING JSON.STRINGIFY
+       
+       let my_obj_serialised = JSON.stringify(User_Details);
+       localStorage.setItem("User_Details",my_obj_serialised);
+       console.log(localStorage);
+       //output is -- Storage {user deatails: '{"name":"amitkocher","email":"kakkarlovish15@gmail.com","phone":"6666888888888888"}'
+
+
+       //now to deserialised as to get object and use it normal as it is now string we convert back to object
+       let my_obj_deserialised = JSON.parse(localStorage.getItem("User_Details"))
+       console.log(my_obj_deserialised);
+       //output is 
+      
+// {name: 'amitkocher', email: 'kakkarlovish15@gmail.com', phone: '6666'}
+// email
+// : 
+// "kakkarlovish15@gmail.com"
+// name
+// : 
+// "amitkocher"
+// phone
+// : 
+// "6666"
+// [[Prototype]]
+// : 
+// Object //        THAT IS WE GET OUR OBJECT BACK IN OBJECT TYPE
+    
+
+})
+  </script>
+</html>
