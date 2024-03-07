@@ -28,7 +28,7 @@
         const obj={
             name,email,phone
         }
-        localStorage.setItem('obj.email',JSON.stringify(obj));
+        localStorage.setItem(obj.email,JSON.stringify(obj));
         showobjectonscreen(obj); //FUNCTION CALL WITH OBJ PASSED AS ARGUEMENT
     }
     function showobjectonscreen(obj){
