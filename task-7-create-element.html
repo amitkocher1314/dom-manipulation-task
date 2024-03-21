@@ -38,6 +38,13 @@
     
     const newdiv=divs[1];
     const fruit = document.querySelector(".fruits");
+    fruit.firstElementChild.style.backgroundColor="pink"
+    fruit.lastElementChild.style.backgroundColor="pink";
+    fruit.children[1].style.backgroundColor="green";
+
+    fruit.parentElement.parentElement.style.backgroundColor="yellow"
+    fruit.parentElement.style.backgroundColor="red"
+    //see sibling syntax in copy
     newdiv.insertBefore(para1,fruit);
 
 para1.className='fruits-total';
